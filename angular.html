@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	
+	<script src="angular.min.js"></script>
+	<body>
+	<div ng-app="">
+		
+			Customer Name:- <input type='text' ng-model='CustomerName'><br/>
+			Customer Code:- <input ng-model='CustomerCode' type='text'><br/>
+			<div ng-init="names=['moses','john','peter']">
+			<ul>
+			<li ng-repeat="x in names">{{x}}</li>
+			</ul>
+			</div>
+			<div ng-init="class=[{name:'mike',age:20},{name:'more',age:10}]">
+			<ul>
+			<li ng-repeat='y in class'>{{y.name+" "+y.age}}</li>
+			</ul>
+			</div>
+			<form name='myForm'>
+			Email: <input type='email' ng-model='mail' name='ma'> <span ng-show='myForm.ma.$error.email'> Not Valid</span>
+			</form>
+			<input type='submit' ng-click='submit()' value='submit'>
+		
+		<div ng-bind='CustomerName'></div>
+		<div ng-bind='CustomerCode'></div>
+		<div ng-bind='mail'></div>
+		</div>
+	</body>
+</html>
